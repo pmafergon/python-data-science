@@ -15,9 +15,9 @@ clf = tree.DecisionTreeClassifier()
 clf = clf.fit(X, Y)
 
 def fxy():
-    alt = int(input("Inserte la altura de la persona en CM: "))
-    pes = int(input("Inserte el peso de la persona en KG: "))
-    zap = int(input("Inserte talla de zapatos: "))
+    alt = int(input("Insert the person's height in CM: "))
+    pes = int(input("Insert the person's weight in KG: "))
+    zap = int(input("Insert shoe size: "))
     prediction = clf.predict([[alt,pes,zap]])
     print(prediction)
     X.append([alt,pes,zap])
@@ -26,10 +26,10 @@ def fxy():
 control = True
 while control:
     fxy()
-    repeat = input("¿Quieres realizar otra consulta? (si/no): ")
+    repeat = input("Do you want to make another query? (yes/no): ")
     if repeat.lower() == "no":
         control = False
-    elif repeat.lower() == "si":
+    elif repeat.lower() == "yes":
         control = True
 
 print(X)
