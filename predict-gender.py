@@ -7,9 +7,12 @@ X = [
     [159, 55, 37], [171, 75, 42], [181, 85, 43]
 ]
 
-Y = ['male','female','female','female',
-     'male','male','male','female',
-     'male','female', 'male']
+
+Y = [
+    ' male ', ' female ', ' female ', ' female ',
+    ' male ',' male ', ' male ', ' female ',
+    ' male ', ' female ', ' male '
+]
 
 clf = tree.DecisionTreeClassifier()
 clf = clf.fit(X, Y)
