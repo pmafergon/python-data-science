@@ -17,23 +17,24 @@ Y = [
 clf = tree.DecisionTreeClassifier()
 clf = clf.fit(X, Y)
 
-def fxy():
-    alt = int(input("Insert the person's height in CM: "))
-    pes = int(input("Insert the person's weight in KG: "))
-    zap = int(input("Insert shoe size: "))
-    prediction = clf.predict([[alt,pes,zap]])
-    print(prediction)
-    X.append([alt,pes,zap])
-    Y.append(prediction[0])
-    
+def fxy(alt,pes,zap):
+  prediction = clf.predict([[alt,pes,zap]])
+  X.append([alt,pes,zap])
+  Y.append(prediction[0])
+  return prediction[0]
+
 control = True
 while control:
-    fxy()
-    repeat = input("Do you want to make another query? (yes/no): ")
-    if repeat.lower() == "no":
-        control = False
-    elif repeat.lower() == "yes":
-        control = True
+  alt = int(input("Insert the person's height in CM: "))
+  pes = int(input("Insert the person's weight in KG: "))
+  zap = int(input("Insert shoe size: "))
+  prd= fxy(alt,pes,zap)
+  print(prd)
+  repeat = input("Do you want to make another query? (yes/no): ")
+  if repeat.lower() == "no":
+     control = False
+  elif repeat.lower() == "yes":
+    control = True
 
 print(X)
 print(Y)
